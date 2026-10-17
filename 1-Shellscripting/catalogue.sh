@@ -13,7 +13,12 @@ mysql -h localhost -u root -pRoboShop@1 < db/schema.sql
 mysql -h localhost -u root -pRoboShop@1 < db/app-user.sql
 mysql -h localhost -u root -pRoboShop@1 catalogue < db/master-data.sql
 
-useradd -r -s /bin/false appuser
+
+# Create the app user only if it does not exist
+#useradd -r -s /bin/false appuser
+if ! id appuser >/dev/null 2>&1; then
+  useradd -r -s /bin/false appuser
+fi
 cd /app
 go mod tidy
 CGO_ENABLED=0 go build -o /app/catalogue .
