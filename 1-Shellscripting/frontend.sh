@@ -17,7 +17,5 @@ npm run build
 rm -rf /usr/share/nginx/html/*
 cp -r out/* /usr/share/nginx/html/
 
-cp nginx.conf  /etc/nginx/nginx.conf
-
 systemctl restart nginx
 systemctl enable nginx
