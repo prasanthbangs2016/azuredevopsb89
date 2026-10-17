@@ -8,7 +8,7 @@ cd /app
 unzip /tmp/catalogue.zip
 
 #below drop table is to avoid failure for every rerun
-mysql -h "localhost -u root -pRoboShop@1" -e "DROP DATABASE IF EXISTS catalogue;"
+mysql -h localhost -u root -pRoboShop@1 -e "DROP DATABASE IF EXISTS catalogue;"
 mysql -h localhost -u root -pRoboShop@1 < db/schema.sql
 mysql -h localhost -u root -pRoboShop@1 < db/app-user.sql
 mysql -h localhost -u root -pRoboShop@1 catalogue < db/master-data.sql
