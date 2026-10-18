@@ -15,17 +15,15 @@ mysql -h localhost -u root -pRoboShop@1 catalogue < db/master-data.sql
 
 
 # Create the app user only if it does not exist
-#useradd -r -s /bin/false appuser
-if ! id appuser >/dev/null 2>&1; then
-  useradd -r -s /bin/false appuser
-fi
+useradd -r -s /bin/false appuser
+#if ! id appuser >/dev/null 2>&1; then
+#  useradd -r -s /bin/false appuser
+#fi
 cd /app
 go mod tidy
 CGO_ENABLED=0 go build -o /app/catalogue .
 chown -R appuser:appuser /app
 chmod o-rwx /app -R
-
-
 
 systemctl daemon-reload
 systemctl enable catalogue
