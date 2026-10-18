@@ -1,6 +1,6 @@
 dnf install -y java-21-openjdk java-21-openjdk-devel maven
 
-cp order.service /etc/systemd/system/orders.service
+cp orders.service /etc/systemd/system/orders.service
 
 useradd -r -s /bin/false appuser
 mkdir -p /app
