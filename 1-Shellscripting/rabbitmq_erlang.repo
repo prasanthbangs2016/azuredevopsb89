@@ -1,0 +1,5 @@
+[rabbitmq_erlang]
+name=rabbitmq_erlang
+baseurl=https://packagecloud.io/rabbitmq/erlang/el/9/$basearch
+gpgcheck=0
+enabled=1

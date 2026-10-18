@@ -1,0 +1,7 @@
+dnf install -y valkey
+
+sed -i 's/bind 127.0.0.1/bind 0.0.0.0/' /etc/valkey/valkey.conf
+sed -i 's/protected-mode yes/protected-mode no/' /etc/valkey/valkey.conf
+
+systemctl enable valkey
+systemctl start valkey
