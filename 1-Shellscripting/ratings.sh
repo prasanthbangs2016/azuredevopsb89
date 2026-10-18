@@ -1,5 +1,5 @@
 dnf install -y python3 python3-pip mysql8.4
-
+cp ratings.service /etc/systemd/system/orders.service
 curl -L -o /tmp/ratings.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/ratings.zip
 rm -rf /app
 mkdir -p /app && cd /app
