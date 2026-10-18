@@ -7,6 +7,7 @@ mkdir -p /app
 
 
 curl -L -o /tmp/payment.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/payment.zip
+rm -rf /app
 cd /app
 unzip /tmp/payment.zip
 pip3 install -r requirements.txt
