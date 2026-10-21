@@ -1,3 +1,8 @@
+log_file=/tmp/roboshop.log
+header_start="\e[35m >>>>>>"
+header_end="<<<<<< \e[0m"
+
+echo -e "${header_start} Install  mysql repo file ${header_end}"
 dnf install -y mysql8.4-server
 systemctl enable mysqld
 systemctl start mysqld

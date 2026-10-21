@@ -22,6 +22,8 @@ app_pre_reqs() {
 
     cd /app
 
+
+
     echo -e "${header_start} ${component_name} code Extraction ${header_end}"
     unzip /tmp/${component_name}.zip &>>${log_file}
     echo $?
