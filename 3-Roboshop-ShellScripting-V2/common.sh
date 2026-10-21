@@ -9,7 +9,7 @@ app_pre_reqs() {
     echo $?
 
     echo -e "${header_start} copy ${component_name} service file ${header_end}"
-    cp ${component_name}.service /etc/systemd/system/${component_name}.service
+    cp ${component_name}.service /etc/systemd/system/${component_name}.service &>>${log_file}
     echo $?
 
     echo -e "${header_start} Download ${component_name} code ${header_end}"

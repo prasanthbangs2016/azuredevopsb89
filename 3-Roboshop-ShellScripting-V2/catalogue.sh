@@ -1,4 +1,4 @@
-source=common.sh
+source common.sh
 component_name=catalogue
 
 echo -e "${header_start} Install MYSQL client ${header_end}"
