@@ -23,7 +23,7 @@ app_pre_reqs() {
     cd /app
 
     echo -e "${header_start} ${component_name} code Extraction ${header_end}"
-    unzip /tmp/catalogue.zip &>>${log_file}
+    unzip /tmp/${component_name}.zip &>>${log_file}
 
     rm -rf /app &>>${log_file}
     mkdir -p /app &>>${log_file}
