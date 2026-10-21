@@ -24,9 +24,6 @@ app_pre_reqs() {
 
     echo -e "${header_start} ${component_name} code Extraction ${header_end}"
     unzip /tmp/${component_name}.zip &>>${log_file}
-
-    rm -rf /app &>>${log_file}
-    mkdir -p /app &>>${log_file}
     echo $?
 }
 

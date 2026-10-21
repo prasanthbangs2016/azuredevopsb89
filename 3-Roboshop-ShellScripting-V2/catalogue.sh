@@ -13,7 +13,7 @@ echo -e "${header_start} Loading DB schemas ${header_end}"
 #mysql -h localhost -u root -pRoboShop@1 -e "DROP DATABASE IF EXISTS catalogue;"
 mysql -h localhost -u root -pRoboShop@1 < db/schema.sql &>>${log_file}
 mysql -h localhost -u root -pRoboShop@1 < db/app-user.sql &>>${log_file}
-mysql -h localhost -u root -pRoboShop@1 catalogue < db/master-data.sql &>>${log_file}
+mysql -h localhost -u root -pRoboShop@1 ${component_name} < db/master-data.sql &>>${log_file}
 echo $?
 
 golang_app
