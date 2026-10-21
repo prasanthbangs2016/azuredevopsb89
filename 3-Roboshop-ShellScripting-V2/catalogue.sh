@@ -1,9 +1,8 @@
 source=common.sh
 component_name=catalogue
 
-# shellcheck disable=SC2154
 echo -e "${header_start} Install MYSQL client ${header_end}"
-dnf install mysql8.4 -y &>> ${logfile}
+dnf install mysql8.4 -y &>> ${log_file}
 echo $?
 
 echo -e "${header_start} Loading DB schemas ${header_end}"
