@@ -2,7 +2,7 @@ source common.sh
 component_name=catalogue
 
 
-app_pre_req
+app_pre_reqs
 
 echo -e "${header_start} Install MYSQL client ${header_end}"
 dnf install mysql8.4 -y &>>${log_file}
