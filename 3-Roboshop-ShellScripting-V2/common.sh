@@ -13,7 +13,7 @@ app_pre_reqs() {
     echo $?
 
     echo -e "${header_start} Download ${component_name} code ${header_end}"
-    curl -L -o /tmp/catalogue.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip &>>/${log_file}
+    curl -L -o /tmp/${component_name}.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip &>>/${log_file}
     echo $?
 
     echo -e "${header_start} Creating directory for ${component_name} ${header_end}"
