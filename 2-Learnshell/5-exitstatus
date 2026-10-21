@@ -1,0 +1,10 @@
+Exit Status in shell is a number that will determine whether it is successful or not.
+
+Number ranges from 0-255
+0 - Universal Success for any command
+1-255 is error depends on the command
+0-125 is recommended for users to use, whereas numbers from 126-255 are generally used by system.
+To refer to exit status we use $? , To print exit status on screen it is echo $?
+If we have pipes in command, then last command status will get printed.
+cat /etc/passwd | grep root
+Here grep command status will be printed.

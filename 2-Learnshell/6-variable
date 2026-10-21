@@ -1,0 +1,24 @@
+If we observe the scripts closely, we will see some words that are repeating. For example cart.sh we have a word cart repeating multiple times. In case tomorrow if we need to change that word then we need to update it in many places. This becomes a challenge.
+This problem is addressed with variables. Variables are also called constants in other languages. Variables are like declare once, use multiple times.
+In simple words, If we set a name to a set of data it is called a variable.
+Syntax
+VAR_NAME=value
+Example
+
+#its all about reusability, declare and reuse it meaning the value at one place,
+
+# Declare the variable
+x=100
+# Access the variable
+echo $x
+# Access the variable using braces. This is alternate way
+
+echo ${x}
+echo ${x}times # Useful in the scenarios like this.
+
+
+Variable names are declared in different ways by people of different backgrounds.
+
+OS Background : Prefer variables to be in all CAPS with Underscore. ( VARIABLE_NAME)
+Java Background: Prefer variable to be in camel case. ( variableName )
+Python Background: Prefer variable to be in snake case. ( variable_name )
