@@ -1,6 +1,5 @@
-logfile=/tmp/roboshop.log
-header_start="\e[35m >>>>>>"
-header_end=">>>>>> \e[0m"
+source common.sh
+component_name=frontend
 
 echo log file output : ${logfile}
 echo -e "${header_start} InStalling nginx ${header_end}"
@@ -14,12 +13,12 @@ echo -e "${header_start} Download NodeJS runtime ${header_end}"
 curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -  &>>${logfile}
 echo $?
 
-echo -e "${header_start}I nStalling Nodejs ${header_end}"
+echo -e "${header_start}InStalling Nodejs ${header_end}"
 dnf install -y nodejs  &>>${logfile}
 echo $?
 
 echo -e "${header_start} Download frontend code ${header_end}"
-curl -L -o /tmp/frontend.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/frontend.zip  &>>${logfile}
+curl -L -o /tmp/frontend.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip  &>>${logfile}
 echo $?
 
 echo -e "${header_start} Removing old content ${header_end}"

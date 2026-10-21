@@ -1,0 +1,39 @@
+    a block is repeatable step somewhere in the code, in this scenario having same code it will be duplication so
+    have the function.
+
+    example
+
+    #function declaration
+    sample() {
+        echo hell function
+
+    }
+    a=10
+
+
+    sample # function calling
+
+    source common.sh   #loading other script
+
+    sample # function calling
+
+
+
+# code in common.sh
+sample() {
+	b=20
+	echo sample function
+	echo a - $a
+}
+
+# code in catalogue.sh
+a=10
+source common.sh
+sample
+echo b - $b
+Practical: Lets create functions in common.sh and enhance the RoboShop project script that can avoid repeated code blocks.
+After optimization you will see
+80% of repeated code moved to common.sh
+Service-specific scripts reduced from 40–50 lines → 3–5 lines
+Onboarding a new service becomes trivial
+
