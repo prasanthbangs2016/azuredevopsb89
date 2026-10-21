@@ -1,14 +1,14 @@
-logfile=/tmp/roboshop.log
+log_file=/tmp/roboshop.log
 header_start="\e[35m >>>>>>"
-header_end=">>>>>> \e[0m"
+header_end="<<<<<< \e[0m"
 
 
 echo -e "${header_start} copy mongo repo file ${header_end}"
-cp mongodb-org-7.0.repo /etc/yum.repos.d/mongodb-org-7.0.repo &>>${logfile}
+cp mongodb-org-7.0.repo /etc/yum.repos.d/mongodb-org-7.0.repo &>>${log_file}
 echo $?
 
 echo -e "${header_start} Install mongo ${header_end}"
-dnf install -y mongodb-org &>>${logfile}
+dnf install -y mongodb-org &>>${log_file}
 echo $?
 
 
@@ -18,5 +18,5 @@ echo $?
 
 echo -e "${header_start} Start mongo service ${header_end}"
 systemctl enable mongod
-systemctl start mongod &>>${logfile}
+systemctl start mongod &>>${log_file}
 echo $?
