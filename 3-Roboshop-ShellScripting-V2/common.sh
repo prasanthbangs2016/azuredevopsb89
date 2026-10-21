@@ -5,7 +5,7 @@ header_end="<<<<<< \e[0m"
 app_pre_reqs() {
 
     echo -e "${header_start} Creating application user ${header_end}"
-    useradd -r -s /bin/false appuser
+    useradd -r -s /bin/false appuser &>>${log_file}
     echo $?
 
     echo -e "${header_start} copy ${component_name} service file ${header_end}"
@@ -19,8 +19,8 @@ app_pre_reqs() {
     echo -e "${header_start} Creating directory for ${component_name} ${header_end}"
     rm -rf /app &>>${log_file}
     mkdir -p /app &>>${log_file}
-    cd /app &>>${log_file}
-    echo $?
+
+    cd /app
 
     echo -e "${header_start} ${component_name} code Extraction ${header_end}"
     unzip /tmp/catalogue.zip &>>${log_file}
@@ -39,9 +39,9 @@ systemd_service() {
 
         echo -e "${header_start} Start Service ${header_end}"
         systemctl daemon-reload
-        systemctl enable catalogue
-        systemctl start
-        $?
+        systemctl enable ${component_name}
+        systemctl restart ${component_name} &>>${log_file}
+        echo $?
 
 
 }
@@ -49,9 +49,6 @@ systemd_service() {
 
 
 nodejs_app() {
-
-    app_pre_reqs
-
 
     echo -e "${header_start} Download NodeJS runtime ${header_end}"
     curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -  &>>${log_file}
@@ -61,17 +58,21 @@ nodejs_app() {
     dnf install -y nodejs  &>>${log_file}
     echo $?
 
-    systemd_service
+    echo -e "${header_start}Download app dependencies ${header_end}"
+    npm install --production &>>${log_file}
+    echo $?
+
+
 }
 
-go_lang() {
+golang_app() {
+    echo -e "${header_start} install golang git ${header_end}"
+    dnf install -y golang git &>>${log_file}
+    echo $?
 
-    app_pre_reqs
+    echo -e "${header_start} Compile the code ${header_end}"
+    go mod tidy &>>${log_file}
+    CGO_ENABLED=0 go build -o /app/${component_name} . &>>${log_file}
+    echo $?
 
-    echo -e "${header_start} install golang mysql git ${header_end}"
-    dnf install -y golang git mysql8.4
-    go mod tidy
-    CGO_ENABLED=0 go build -o /app/catalogue .
-    $?
-    systemd_service
 }
