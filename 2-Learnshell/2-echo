@@ -1,0 +1,29 @@
+when u wanted to print information echo is useful.
+
+echo -e \\e[COLCODEmHello World\\e[0m
+
+
+          Forground       Background    Bright foreground   Bright Background
+black       30            40            90                  100
+
+red         31            41            91                  101
+
+green       32            42            92                  102
+
+yellow      33            43            93                  103
+
+Blue        34            44            94                  104
+
+Magenta     35            45            95                  105
+
+cyan        36            46            96                  106
+
+white       37            47            97                  107
+
+0m : is to reset or normal
+1m bold
+4m : underline
+
+Note : when we enabled colour, we should disable otherwise it will continue for next line
+
+

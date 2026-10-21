@@ -1,0 +1,77 @@
+Output redirection
+
+
+command > file        # stdout to file (overwrite)
+command >> file       # stdout to file (append)
+command 2> file       # stderr to file
+command 2>> file      # stderr appended to file
+command &> file       # stdout and stderr to file (Bash)
+command > file 2>&1   # stdout and stderr to file (POSIX, works everywhere)
+
+Input redirection
+
+command < file        # read stdin from file
+command << EOF        # here-document (inline multi-line input)
+line 1
+line 2
+EOF
+command <<< "text"    # here-string (Bash)
+
+
+File descriptors
+
+FD	Name
+0	stardard input
+1	stdout
+2	stderr
+
+# Discard all output
+command > /dev/null 2>&1
+
+# Discard only errors
+command 2> /dev/null
+
+# Send errors to the same place as stdout, then pipe
+command 2>&1 | grep "error"
+
+# Swap stdout and stderr
+command 3>&1 1>&2 2>&3 3>&-
+
+# Log to file and also show on screen
+command 2>&1 | tee output.log
+
+# Append to log with tee
+command 2>&1 | tee -a output.log
+
+# Redirect inside a script for all commands after it
+exec > script.log 2>&1
+
+
+example
+--------
+(stdout & stderr) (Write output & error to a file and append to existing content)
+ls -ld &>> /tmp our
+
+>> : append
+> overwrite
+
+Stdout , stderr, stdout & stderr (Write output / error or output & error to a file by appending to existing content of a file.)
+1>>  2>> &>>
+
+&>  (stdout & stderr) (Write output & error to a file and overwrite existing content)
+
+2>  (Standard Error (stderr) (Write error to a file and overwrite existing content)
+
+1>     Standard Output (stdout) (Write output to a file and overwrite existing content)
+/ >     Standard Output (stdout) (Write output to a file and overwrite existing content)
+
+&>/dev/null   :
+
+#i dont want op onto screen,op is for human purpose
+sudo dnf install nginx -f &>/dev/null
+
+
+
+
+
+

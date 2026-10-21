@@ -2,7 +2,7 @@ curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
 cp user.service /etc/systemd/system/user.service
 dnf install -y nodejs
 useradd -r -s /bin/false appuser
-rm -rf /app
+
 mkdir -p /app
 curl -L -o /tmp/user.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/user.zip
 cd /app
