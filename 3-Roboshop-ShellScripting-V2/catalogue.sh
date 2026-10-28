@@ -1,9 +1,9 @@
 source common.sh
 component_name=catalogue
 
-echo -e "${header_start} Install MYSQL client ${header_end}"
-dnf install golang mysql8.4 -y &>>${log_file}
-echo $?
+#echo -e "${header_start} Install MYSQL client ${header_end}"
+#dnf install golang mysql8.4 -y &>>${log_file}
+#echo $?
 
 echo -e "${header_start} copy ${component_name} service file ${header_end}"
 cp ${component_name}.service /etc/systemd/system/${component_name}.service &>>${log_file}
