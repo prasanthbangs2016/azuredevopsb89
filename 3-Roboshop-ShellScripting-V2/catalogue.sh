@@ -1,7 +1,7 @@
 source common.sh
 component_name=catalogue
 
-echo -e "${header_start} Install MYSQL client ${header_end}"
+echo -e "${header_start} Install MYSQL client ang golang ${header_end}"
 dnf install golang mysql8.4 -y &>>${log_file}
 echo $?
 
