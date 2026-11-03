@@ -1,0 +1,10 @@
+13.13 Variables - Part2
+## inputs to script
+
+#x=100 bash 10-vars.sh
+
+echo x from left side of script - $x
+
+#how to run scrpit
+
+#x=100 scriptname(ex-10-vars.sh)
