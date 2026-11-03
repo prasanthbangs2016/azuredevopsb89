@@ -59,7 +59,7 @@ systemd_service() {
 golang_app() {
   app_pre_reqs
 
-  echo -e "${header_start} installing Golang GIT & Mysql ${header_end}" | tee -a ${logfile}
+  echo -e "${header_start} installing Golang GIT ${header_end}" | tee -a ${logfile}
   dnf install -y golang git  &>>${logfile}
   echo $?
 
