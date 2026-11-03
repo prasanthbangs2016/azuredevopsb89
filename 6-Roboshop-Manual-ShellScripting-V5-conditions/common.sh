@@ -78,7 +78,7 @@ golang_app() {
 
 #simple if
 status_check() {
-  if [ $? -eq 0]; then
+  if [ $? -eq 0 ]; then
     echo -e "\e[32m Success \e[0m"
     else
       echo -e "\e[31m Failure \e[0m"
@@ -87,7 +87,7 @@ status_check() {
 
 schema_load() {
   if [ "$schema_load" = "true" ]; then
-      if [ "$schema_type" = "mysql"]; then
+      if [ "$schema_type" = "mysql" ]; then
         echo -e "${header_start} Install mysql client ${header_end}" | tee -a ${logfile}
         dnf install mysql8.4 -y &>>${logfile}
         status_check
