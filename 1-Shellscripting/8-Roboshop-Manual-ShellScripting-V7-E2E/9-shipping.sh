@@ -10,7 +10,7 @@ echo "Start time ${start_time}"
 end_time=$(date +%s)
 
 echo -e "${header_start} Install JDK maven ${header_end}" | tee -a ${logfile}
-dnf install -y java-21-openjdk java-21-openjdk-devel maven &>>${logfile
+dnf install -y java-21-openjdk java-21-openjdk-devel maven &>>${logfile}
 status_check
 
 echo -e "${header_start} Copy ${component_name} service file ${header_end}" | tee -a ${logfile}
