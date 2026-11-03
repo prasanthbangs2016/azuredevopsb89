@@ -26,7 +26,7 @@ cd /app &>>${logfile}
 
 
 echo -e "${header_start} Download ${componet_name} code ${header_end}" | tee -a ${logfile}
-curl -L -o /tmp/payment.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip &>>${logfile}
+curl -L -o /tmp/${component_name}.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip &>>${logfile}
 status_check
 
 echo -e "${header_start} Extract ${componet_name} code ${header_end}" | tee -a ${logfile}
