@@ -48,6 +48,7 @@ nodejs_app() {
 }
 
 systemd_service() {
+  schema_load
 
   echo -e "${header_start} Apply permissions to app folder ${header_end}" | tee -a ${logfile}
   chown -R appuser:appuser /app &>>${logfile}
@@ -72,7 +73,6 @@ golang_app() {
   go mod tidy &>>${logfile}
   CGO_ENABLED=0 go build -o /app/${component_name} . &>>${logfile}
   status_check()
-
   systemd_service
 }
 
