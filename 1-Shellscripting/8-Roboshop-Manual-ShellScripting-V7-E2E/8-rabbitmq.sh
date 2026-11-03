@@ -2,8 +2,6 @@ source common.sh
 component_name=rabbitmq
 echo Log file output: ${logfile}
 
-&>>${logfile}
-
 echo -e "${header_start} Copy ${component_name} repo file ${header_end}" | tee -a ${logfile}
 cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo &>>${logfile}
 status_check
@@ -30,5 +28,4 @@ ${component_name}ctl set_user_tags roboshop administrator &>>${logfile}
 ${component_name}ctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${logfile}
 status_check
 
-systemctl status ${component_name}-server &>>${logfile}
-status_check
+
