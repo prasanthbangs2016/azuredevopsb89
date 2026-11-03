@@ -1,0 +1,71 @@
+simple if
+
+if [ expression ]; then
+ commands
+fi
+
+
+if else
+# If the expression is true then it will execute commands
+
+if [ expression ]; then
+  commands
+else
+  other_commands
+fi
+
+else if # multiple expressions
+# If the expression is true then it will execute commands, Else execute other_commands
+
+if [ expression1 ]; then
+  commands1
+elif [ expression2 ]; then
+  commands2
+else
+  commands3
+fi
+
+# If the we have multiple expressions then we will go for else-if
+
+
+Expressions in Conditions
+Expressions fall under three categories:
+String Checks
+Number Checks
+File checks
+String Checks
+Operators:
+= (equal)
+!= (not equal)
+-z (string empty)
+-n (string not empty)
+# [ string1 = string2 ] - true if both the strings are same
+# [ string1 != string2 ] - true if both the strings are not same
+# [ -z $var ] - true if $var is empty
+# [ -n $var ] - true if $var is not empty
+
+Number Checks
+Operators:
+-eq (equal)
+-ne (not equal)
+-lt (less than)
+-le (less than or equal)
+-gt (greater than)
+-ge (greater than or equal)
+# [ num1 operator number2 ]
+# Operators:
+# -eq , -ne , -gt, -ge , -lt , -le
+# ex: [ 1 -lt 2 ]
+
+File Checks
+Common file checks:
+-e FILE — file exists
+-f FILE — regular file
+-d DIRECTORY — directory exists
+
+[ -e file ] - true if file exists
+[ -f file ] - true if file exists and if it is a regular file
+[ -d file ] - true if file exists and if it is a directory
+
+
+Reference Documentation: https://man7.org/linux/man-pages/man1/bash.1.html
