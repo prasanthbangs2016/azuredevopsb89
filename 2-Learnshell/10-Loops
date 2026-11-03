@@ -1,0 +1,46 @@
+Loops allow you to repeat a block of code multiple times, in an iterative way.
+In simple words, If you want to execute the same set of commands again and again then loop is the answer.
+How is it different with function: Function is like a block of code that executes when we call and need. It is not a continuous iterative way.
+Shell supports several loop constructs, but the most commonly used and most powerful are:
+for loop
+while loop
+13.11 The for Loop
+The for loop is used when you know how many items you are going to iterate over.
+Syntax:
+for VARIABLE in item1 item2 item3; do
+    commands
+done
+
+Example:
+for FRUIT in apple mango orange; do
+    echo "Fruit: $FRUIT"
+done
+
+Output
+Fruit: apple
+Fruit: mango
+Fruit: orange
+
+This loop runs three times, once for each item.
+13.12 The while Loop
+A while loop runs as long as an expression is true.
+Use it when repetition depends on a condition, not a fixed list.
+Syntax:
+while [ expression ]; do
+    commands
+done
+
+Example:
+X=5
+while [ $X -gt 0 ]; do
+    echo "Value: $X"
+    X=$((X-1))
+done
+
+Output
+Value: 5
+Value: 4
+Value: 3
+Value: 2
+Value: 1
+
