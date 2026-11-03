@@ -17,6 +17,6 @@ mysql -h localhost -u root -pRoboShop@1 < db/app-user.sql &>>${logfile}
 mysql -h localhost -u root -pRoboShop@1 ${component_name} < db/master-data.sql &>>${logfile}
 echo $?
 
-go_lang_app
+golang_app
 
 systemd_service
