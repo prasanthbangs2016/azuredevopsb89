@@ -1,0 +1,25 @@
+Exit Status - Part2
+We already know how to capture the command exit status. However
+when we are making our own scripts then being an author we need to provide our own exit status to the system.
+This is a very good practice to understand if the script is completed successfully or not.
+
+
+# script.sh
+echo Hello World
+exit # to come out myown use exit 1 other commands wont execute
+echo Final World
+
+# Output
+bash script.sh
+echo $?
+
+
+# script.sh
+echo Hello World
+exit 1
+echo Final World
+
+# Output
+bash script.sh
+echo $?
+

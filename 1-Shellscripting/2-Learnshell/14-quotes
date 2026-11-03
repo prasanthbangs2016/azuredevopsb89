@@ -1,0 +1,16 @@
+Quotes
+We have two quotes that are single quotes and double quotes.
+When our input have special characters and we need to disable the speciality of those special characters then we need to approach for quotes.
+
+Single quotes are strict quoting.
+Whereas Double quotes give you a leniency to access the variables in them.
+So it is a choice to pick which one to use.
+
+example
+
+x=200
+echo $x
+
+echo '**** $x *****'  #we go with single quotes when we wanted to print what is inside of echo.
+
+echo "**** $x *****"   # it will print the variable value so always go with double quotes

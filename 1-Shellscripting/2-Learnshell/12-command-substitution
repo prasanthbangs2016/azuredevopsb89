@@ -1,0 +1,18 @@
+Command Substitution:
+===============
+A variable to be declared by executing a command and the output we are going to store in a variable.
+# Syntax
+var=$(command)
+
+# Example
+DATE=$(date)
+
+
+Arithmetic Substitution:
+A variable to be declared by evaluating an Arithmetic expression and output we are going to store in a variable.
+# Syntax
+var=$((expression))
+
+# Example
+sum=$((2+5))
+

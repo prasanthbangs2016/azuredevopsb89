@@ -1,0 +1,49 @@
+unctions - Part2
+Same like script to function also we can parse the values either by
+Before line in function - We already seen this.
+Left hand side to function
+Right hand side to function using position variables.
+Before line in function:
+This is most commonly used. We have also seen the project.
+
+sample() {
+  echo x - $x
+}
+
+x=10
+sample
+
+x=20
+sample
+
+
+Left hand side to function:
+This is most commonly used. We have also seen the project.
+sample() {
+  echo x - $x
+}
+
+x=10 sample
+x=20 sample
+
+Right hand side to function:
+This is most commonly used. We have also seen in project.
+sample() {
+  echo x - $1
+}
+
+sample 10
+sample 20
+
+
+sample() {
+  echo First Argument - $1
+  echo Second Argument - $2
+  echo All Arguments - $*
+  echo No of Arguments - $#
+}
+
+sample 100 200 300
+
+
+
