@@ -16,6 +16,9 @@ echo $x
 echo ${x}
 echo ${x}times # Useful in the scenarios like this.
 
+or
+
+
 
 Variable names are declared in different ways by people of different backgrounds.
 

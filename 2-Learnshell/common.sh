@@ -1,7 +1,3 @@
-  #function declaration
-    sample() {
-        echo hell function
-
-    }
-
-    sample # function calling
+logfile=/tmp/roboshop.log
+header_start="\e[35m >>>>>>"
+header_end=">>>>>> \e[0m"
