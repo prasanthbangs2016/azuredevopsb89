@@ -5,7 +5,7 @@
 
     #function declaration
     sample() {
-        echo hell function
+        echo hell function #function with commands
 
     }
     a=10

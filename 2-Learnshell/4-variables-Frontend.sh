@@ -7,7 +7,7 @@ dnf install -y nginx &>>${logfile}
 echo $?
 
 echo -e "${header_start} Copy nginx conf ${header_end}"
-cp nginx.conf  /etc/nginx/nginx.conf  &>>${logfile}&>>${logfile
+cp nginx.conf  /etc/nginx/nginx.conf  &>>${logfile}
 echo $?
 echo -e "${header_start} Download NodeJS runtime ${header_end}"
 curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -  &>>${logfile}
