@@ -1,5 +1,5 @@
 source common.sh
-componet_name=payment
+component_name=payment
 echo Log file output: ${logfile}
 
 echo -e "${header_start} Install python3 runtime and pip ${header_end}" | tee -a ${logfile}
