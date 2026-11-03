@@ -5,7 +5,7 @@ echo Log file output: ${logfile}
 &>>${logfile}
 
 echo -e "${header_start} Copy ${component_name} repo file ${header_end}" | tee -a ${logfile}
-cp ${rabbitmq}.repo /etc/yum.repos.d/${rabbitmq}.repo &>>${logfile}
+cp rabbitmq.repo /etc/yum.repos.d/${rabbitmq}.repo &>>${logfile}
 status_check
 
 echo -e "${header_start} install ${component_name} Server runtime ${header_end}" | tee -a ${logfile}
