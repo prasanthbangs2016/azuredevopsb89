@@ -5,4 +5,3 @@ schema_load=true
 schema_type=mysql
 
 golang_app
-
