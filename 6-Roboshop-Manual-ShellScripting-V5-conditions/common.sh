@@ -10,7 +10,7 @@ app_pre_reqs() {
 #adding idempotency that to avoid already exist error
   echo -e "${header_start} Create appuser ${header_end}" | tee -a ${logfile}
   id appuser &>>${logfile}
-#here i means not present ,check for useradd command exit status code in google
+#here 1 means not present ,check for useradd command exit status code in google
   if [ $? -eq 1 ]; then
     useradd -r -s /bin/false appuser &>>${logfile}
   fi
@@ -18,12 +18,12 @@ app_pre_reqs() {
 
   echo -e "${header_start} Download ${component_name} code ${header_end}" | tee -a ${logfile}
   curl -L -o /tmp/${component_name}.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip &>>${logfile}
-  status_check()
+  status_check
 
   echo -e "${header_start} create folder for ${component_name} ${header_end}" | tee -a ${logfile}
   rm -rf /app &>>${logfile}
   mkdir -p /app &>>${logfile}
-  status_check()
+  status_check
   cd /app
 
   echo -e "${header_start} Extract ${component_name} content ${header_end}" | tee -a ${logfile}
