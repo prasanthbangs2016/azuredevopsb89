@@ -6,8 +6,6 @@ echo -e "${header_start} Install JDK maven ${header_end}" | tee -a ${logfile}
 dnf install -y java-21-openjdk java-21-openjdk-devel maven &>>${logfile}
 status_check
 
-cp orders.service /etc/systemd/system/orders.service &>>${logfile}
-
 app_pre_reqs
 
 echo -e "${header_start} compile ${component_name} ${header_end}" | tee -a ${logfile}
