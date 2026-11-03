@@ -14,7 +14,7 @@ dnf install -y java-21-openjdk java-21-openjdk-devel maven &>>${logfile
 status_check
 
 echo -e "${header_start} Copy ${component_name} service file ${header_end}" | tee -a ${logfile}
-cp shipping.service /etc/systemd/system/shipping.service &>>${logfile
+cp shipping.service /etc/systemd/system/shipping.service &>>${logfile}
 status_check
 
 echo -e "${header_start} Download ${component_name} app code ${header_end}" | tee -a ${logfile}
