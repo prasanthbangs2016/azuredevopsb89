@@ -1,12 +1,9 @@
-
-
-echo -e "${header_start} copy mongo repo file ${header_end}"
-cp mongodb-org-7.0.repo /etc/yum.repos.d/mongodb-org-7.0.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install -y mongodb-org
+systemctl enable mongod
+systemctl start mongod
 
 sed -i 's/bindIp: 127.0.0.1/bindIp: 0.0.0.0/' /etc/mongod.conf
 
-systemctl enable mongod
-
-systemctl start mongod
+systemctl restart mongod

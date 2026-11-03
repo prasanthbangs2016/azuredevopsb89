@@ -43,7 +43,7 @@ echo $?
 cd /app
 
 echo -e "${header_start} Compile application code ${header_end}" | tee -a ${logfile}
-go mod tidy
+go mod tidy &>>${logfile}
 CGO_ENABLED=0 go build -o /app/${component_name} . &>>${logfile}
 echo $?
 

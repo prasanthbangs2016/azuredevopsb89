@@ -1,7 +1,6 @@
 source common.sh
 component_name=mysql
 
-&>>${logfile}
 
 
 echo -e "${header_start} Install Mysql server runtime ${header_end}" | tee -a ${logfile}
@@ -13,7 +12,7 @@ systemctl enable mysqld &>>${logfile}
 systemctl start mysqld &>>${logfile}
 echo $?
 
-echo -e "${header_start} creating mysql user ${header_end}" | tee -a ${logfile}
+echo -e "${header_start} Setup MYSQL password ${header_end}" | tee -a ${logfile}
 mysql -u root -e "
   CREATE USER 'root'@'%' IDENTIFIED BY 'RoboShop@1';
   #create user is the if not exist only would be the failure so handled for the failure

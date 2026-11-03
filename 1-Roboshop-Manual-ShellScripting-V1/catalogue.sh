@@ -6,19 +6,11 @@ rm -rf /app
 mkdir -p /app
 cd /app
 unzip /tmp/catalogue.zip
+mysql -h mysql-dev.rdevopsb89.online -u root -pRoboShop@1 < db/schema.sql
+mysql -h mysql-dev.rdevopsb89.online -u root -pRoboShop@1 < db/app-user.sql
+mysql -h mysql-dev.rdevopsb89.online -u root -pRoboShop@1 catalogue < db/master-data.sql
 
-#below drop table is to avoid failure for every rerun
-#mysql -h localhost -u root -pRoboShop@1 -e "DROP DATABASE IF EXISTS catalogue;"
-mysql -h localhost -u root -pRoboShop@1 < db/schema.sql
-mysql -h localhost -u root -pRoboShop@1 < db/app-user.sql
-mysql -h localhost -u root -pRoboShop@1 catalogue < db/master-data.sql
-
-
-# Create the app user only if it does not exist
 useradd -r -s /bin/false appuser
-#if ! id appuser >/dev/null 2>&1; then
-#  useradd -r -s /bin/false appuser
-#fi
 cd /app
 go mod tidy
 CGO_ENABLED=0 go build -o /app/catalogue .
@@ -27,6 +19,4 @@ chmod o-rwx /app -R
 
 systemctl daemon-reload
 systemctl enable catalogue
-systemctl start catalogue
-
-systemctl status catalogue
+systemctl restart catalogue

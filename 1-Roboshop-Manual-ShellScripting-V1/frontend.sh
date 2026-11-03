@@ -1,14 +1,11 @@
-source common.sh
-component_name=frontend
-echo -e "${header_start} installing nginx ${header_end}"
 dnf install -y nginx
 
-cp nginx.conf  /etc/nginx/nginx.conf
+cp nginx.conf /etc/nginx/nginx.conf
+
 curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
 dnf install -y nodejs
 
-
-curl -L -o /tmp/frontend.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/${component_name}.zip
+curl -L -o /tmp/frontend.zip https://raw.githubusercontent.com/raghudevopsb89/roboshop-microservices/main/artifacts/frontend.zip
 rm -rf /tmp/frontend
 mkdir -p /tmp/frontend
 cd /tmp/frontend
